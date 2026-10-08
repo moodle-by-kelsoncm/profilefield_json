@@ -1,4 +1,8 @@
-# Guia de Uso — moodle-profilefield_json
+Guia de Uso
+===========
+
+Editando Dados do Usuário
+-------------------------
 
 - Ao editar o perfil de um usuário no Moodle, o campo JSON exibirá a interface visual do JSON Editor.
 - O usuário ou administrador pode alterar os nós do objeto em modo de código ou em modo gráfico de árvore.
