@@ -13,21 +13,22 @@ extensions = [
 templates_path = []
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
-language = "pt_BR"
+language = "en"
 
 html_theme = "moodle_docs_theme"
 html_theme_path = [moodle_docs_theme.get_html_theme_path()]
 
 html_theme_options = {
     "project_name": "moodle-profilefield_json",
-    "tagline": "Campo de perfil de usuário com editor JSON e validação de schema",
+    "tagline": "User profile custom field with JSON editor and schema validation",
     "github_url": "https://github.com/moodle-by-kelsoncm/profilefield_json",
     "github_repo": "moodle-by-kelsoncm/profilefield_json",
     "github_version": "main",
-    "doc_path": "docs/",
+    "doc_path": "docs/en/",
     "show_edit_on_github": True,
     "enable_dark_mode": True,
-    "navigation_links": "Início|index, Instalação|installation, Configuração|configuration, Uso|usage",
+    "enable_language_selector": True,
+    "navigation_links": "Home|index, Installation|installation, Configuration|configuration, Usage|usage",
 }
 
 html_static_path = []
