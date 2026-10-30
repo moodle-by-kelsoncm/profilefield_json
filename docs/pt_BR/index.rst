@@ -10,9 +10,9 @@ moodle-profilefield_json
    Edição do perfil: o campo JSON abre um editor em árvore.
 
 * **Dados estruturados no perfil.** Guarde identificadores de integração, preferências ou qualquer dado aninhado num só campo, em vez de vários campos de texto.
-* **Editor visual.** Modos árvore, formulário e texto do `JSON Editor <https://github.com/josdejong/jsoneditor>`_, com o textarea simples como alternativa.
+* **Editor visual.** Modos árvore, código (com realce de sintaxe), formulário e visualização do `JSON Editor <https://github.com/josdejong/jsoneditor>`_, com o textarea simples como alternativa.
 * **Sempre válido.** O servidor só grava JSON válido, dentro do tamanho definido para o campo, e guarda numa forma canônica, formatada.
-* **Exibição segura.** O documento aparece escapado num bloco de código; HTML dentro das strings nunca é renderizado.
+* **Exibição segura.** O documento aparece com realce de sintaxe num bloco de código, sempre escapado: HTML dentro das strings nunca é renderizado.
 
 English version: `English <../en/index.html>`_.
 

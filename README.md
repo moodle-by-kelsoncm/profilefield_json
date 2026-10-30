@@ -19,7 +19,7 @@ Instalação: copie este repositório para `user/profile/field/json` (`public/us
 ## Development / Desenvolvimento
 
 - JavaScript sources are in `amd/src`; rebuild `amd/build` with `npx grunt amd --root=public/user/profile/field/json` in a Moodle checkout.
-- `thirdparty/jsoneditor` is the third-party JSON Editor 10.4.3 (minimalist build, Apache-2.0), listed in `thirdpartylibs.xml` and loaded by `amd/src/editor.js` through RequireJS.
+- `thirdparty/jsoneditor` is the third-party JSON Editor 10.4.3 (full build with the Ace code editor, Apache-2.0), listed in `thirdpartylibs.xml` and loaded by `amd/src/editor.js` through RequireJS.
 - CI (`.github/workflows/ci.yml`) runs `moodle-plugin-ci` on Moodle 4.5 and 5.3 with PostgreSQL and MariaDB; run it locally with [`act`](https://github.com/nektos/act) before pushing.
 
 ## Support and privacy / Suporte e privacidade

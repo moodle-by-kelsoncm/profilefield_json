@@ -8,17 +8,17 @@ On the profile edit page (and on the signup page, if the field is shown there), 
 
 * **Tree:** expand objects and arrays, add, duplicate, move or remove items, and change the type of a value from the menu of each item.
 * **Form:** edit only the values, keeping the structure.
-* **Text:** edit the JSON as text, with buttons to format or compact it.
+* **Code:** edit the JSON as text with syntax highlighting, line numbers and buttons to format or compact it.
 * **View:** read-only tree.
 
 Every change is written to the form field. If the text is not valid JSON, a message under the editor shows the parser error, and the form refuses to save it until it is fixed.
 
-Without JavaScript, or if the editor cannot start, the field is a plain monospaced textarea and the same server checks apply.
+A document that is not valid JSON opens in the code mode. Without JavaScript, or if the editor cannot start, the field is a plain monospaced textarea and the same server checks apply.
 
 Display
 -------
 
-On the user profile, the document is shown pretty-printed in a scrollable code block. The content is always escaped: HTML inside strings is shown as text.
+On the user profile, the document is shown pretty-printed in a scrollable code block, with keys, strings, numbers, booleans and ``null`` in different colours. The content is always escaped: HTML inside strings is shown as text.
 
 .. figure:: img/profile.png
    :alt: A user profile showing the JSON field as a formatted code block.

@@ -41,6 +41,30 @@ textarea[data-profilefield-json-source][aria-hidden="true"] {
     height: 22rem;
 }
 
+.profilefield-json-display .profilefield-json-key {
+    color: #1a1a1a;
+}
+
+.profilefield-json-display .profilefield-json-string {
+    color: #006000;
+}
+
+.profilefield-json-display .profilefield-json-number {
+    color: #ee422e;
+}
+
+.profilefield-json-display .profilefield-json-boolean {
+    color: #c45200;
+}
+
+.profilefield-json-display .profilefield-json-null {
+    color: #004ed0;
+}
+
+.profilefield-json-display .profilefield-json-punct {
+    color: #6c757d;
+}
+
 .profilefield-json-display {
     max-height: 24rem;
     margin: 0;

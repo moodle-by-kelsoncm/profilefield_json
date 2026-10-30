@@ -8,17 +8,17 @@ Na página de edição do perfil (e na de cadastro, se o campo aparece lá), o c
 
 * **Árvore:** expanda objetos e listas, acrescente, duplique, mova ou remova itens e mude o tipo de um valor pelo menu de cada item.
 * **Formulário:** edite só os valores, mantendo a estrutura.
-* **Texto:** edite o JSON como texto, com botões para formatar ou compactar.
+* **Código:** edite o JSON como texto, com realce de sintaxe, numeração de linhas e botões para formatar ou compactar.
 * **Visualização:** árvore só de leitura.
 
 Cada alteração é gravada no campo do formulário. Se o texto não for JSON válido, uma mensagem abaixo do editor mostra o erro do parser, e o formulário só salva depois da correção.
 
-Sem JavaScript, ou se o editor não iniciar, o campo é um textarea simples em fonte monoespaçada, e as mesmas checagens do servidor valem.
+Um documento que não é JSON válido abre no modo código. Sem JavaScript, ou se o editor não iniciar, o campo é um textarea simples em fonte monoespaçada, e as mesmas checagens do servidor valem.
 
 Exibição
 --------
 
-No perfil do usuário, o documento aparece formatado num bloco de código com rolagem. O conteúdo sempre é escapado: HTML dentro das strings aparece como texto.
+No perfil do usuário, o documento aparece formatado num bloco de código com rolagem, com chaves, strings, números, booleanos e ``null`` em cores diferentes. O conteúdo sempre é escapado: HTML dentro das strings aparece como texto.
 
 .. figure:: img/profile.png
    :alt: Perfil de um usuário mostrando o campo JSON como um bloco de código formatado.

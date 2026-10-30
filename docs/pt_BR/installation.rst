@@ -31,4 +31,4 @@ O pacote traz só as strings em inglês. Os demais idiomas, inclusive o portugu�
 Código de terceiros
 -------------------
 
-O editor visual é o `JSON Editor <https://github.com/josdejong/jsoneditor>`_ 10.4.3, de Jos de Jong (Licença Apache 2.0), no build minimalista: sem o modo código e sem o validador de schema. Ele está listado no ``thirdpartylibs.xml``.
+O editor visual é o `JSON Editor <https://github.com/josdejong/jsoneditor>`_ 10.4.3, de Jos de Jong (Licença Apache 2.0), no build completo (cerca de 1 MB, carregado só na edição do perfil), que inclui o editor de código Ace. Ele está listado no ``thirdpartylibs.xml``.

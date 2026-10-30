@@ -99,6 +99,53 @@ class json_value {
     }
 
     /**
+     * HTML of a stored value with syntax highlighting.
+     *
+     * Every token is escaped and wrapped in a span with a class for its kind (key, string, number,
+     * boolean, null, punctuation); whitespace is escaped as it is. The result is safe to print.
+     *
+     * @param string|null $value Stored value.
+     * @return string HTML, without the surrounding pre element.
+     */
+    public static function highlight(?string $value): string {
+        $text = self::readable($value);
+        $pattern = '/("(?:\\\\.|[^"\\\\])*")(\s*:)?|(-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)|\b(true|false)\b|\b(null)\b|([{}\[\],])/u';
+        $html = '';
+        $offset = 0;
+        preg_match_all($pattern, $text, $matches, PREG_SET_ORDER | PREG_OFFSET_CAPTURE);
+        foreach ($matches as $match) {
+            [$token, $start] = $match[0];
+            $html .= s(substr($text, $offset, $start - $offset));
+            if (($match[1][1] ?? -1) >= 0 && ($match[2][1] ?? -1) >= 0) {
+                $html .= self::span('key', $match[1][0]) . self::span('punct', $match[2][0]);
+            } else if (($match[1][1] ?? -1) >= 0) {
+                $html .= self::span('string', $token);
+            } else if (($match[3][1] ?? -1) >= 0) {
+                $html .= self::span('number', $token);
+            } else if (($match[4][1] ?? -1) >= 0) {
+                $html .= self::span('boolean', $token);
+            } else if (($match[5][1] ?? -1) >= 0) {
+                $html .= self::span('null', $token);
+            } else {
+                $html .= self::span('punct', $token);
+            }
+            $offset = $start + strlen($token);
+        }
+        return $html . s(substr($text, $offset));
+    }
+
+    /**
+     * Escaped token wrapped in a span.
+     *
+     * @param string $kind Token kind, used in the class name.
+     * @param string $text Token text.
+     * @return string HTML
+     */
+    private static function span(string $kind, string $text): string {
+        return '<span class="profilefield-json-' . $kind . '">' . s($text) . '</span>';
+    }
+
+    /**
      * Maximum size configured for a field.
      *
      * @param mixed $param1 The param1 column of the field definition.

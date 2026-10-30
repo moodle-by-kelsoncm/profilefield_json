@@ -10,9 +10,9 @@ moodle-profilefield_json
    Editing a profile: the JSON field opens a tree editor.
 
 * **Structured data in the profile.** Keep integration identifiers, preferences or any nested data in one field instead of many text fields.
-* **Visual editor.** Tree, form and text modes from `JSON Editor <https://github.com/josdejong/jsoneditor>`_, with the plain textarea as a fallback.
+* **Visual editor.** Tree, code (with syntax highlighting), form and view modes from `JSON Editor <https://github.com/josdejong/jsoneditor>`_, with the plain textarea as a fallback.
 * **Always valid.** The server only saves valid JSON within the size limit set for the field, and stores it in a canonical, pretty-printed form.
-* **Safe to display.** The document is shown escaped in a code block; HTML inside strings is never rendered.
+* **Safe to display.** The document is shown with syntax highlighting in a code block, always escaped: HTML inside strings is never rendered.
 
 Versão em português: `Português (Brasil) <../pt-br/index.html>`_.
 

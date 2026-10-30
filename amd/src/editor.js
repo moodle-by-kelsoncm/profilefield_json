@@ -28,7 +28,7 @@ import Config from 'core/config';
 import {getString} from 'core/str';
 
 /** @type {string} Bundled JSON Editor build (third-party, see thirdpartylibs.xml). */
-const LIBRARY = '/user/profile/field/json/thirdparty/jsoneditor/jsoneditor-minimalist.min.js';
+const LIBRARY = '/user/profile/field/json/thirdparty/jsoneditor/jsoneditor.min.js';
 
 /**
  * Load the JSON Editor library through RequireJS (it is a UMD module).
@@ -119,10 +119,10 @@ export const init = async(textareaId) => {
     try {
         const JSONEditor = await loadLibrary();
         textarea.after(container, feedback);
-        // The bundled minimalist build has no "code" mode (it leaves out the Ace editor).
+        // "code" is the text mode with syntax highlighting (Ace, bundled in the full build).
         const editor = new JSONEditor(container, {
-            modes: ['tree', 'form', 'text', 'view'],
-            mode: initialError === null ? 'tree' : 'text',
+            modes: ['tree', 'code', 'form', 'view'],
+            mode: initialError === null ? 'tree' : 'code',
             language: editorLanguage(),
             onChangeText: (text) => {
                 textarea.value = text;

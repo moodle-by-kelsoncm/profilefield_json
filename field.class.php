@@ -124,7 +124,7 @@ class profile_field_json extends profile_field_base {
         if ($this->data === null || trim($this->data) === '') {
             return '';
         }
-        return $OUTPUT->render_from_template('profilefield_json/display', ['json' => json_value::readable($this->data)]);
+        return $OUTPUT->render_from_template('profilefield_json/display', ['html' => json_value::highlight($this->data)]);
     }
 
     /**

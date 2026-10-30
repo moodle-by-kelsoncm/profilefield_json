@@ -91,6 +91,25 @@ final class json_value_test extends \advanced_testcase {
     }
 
     /**
+     * highlight() wraps each token in a span and escapes everything.
+     */
+    public function test_highlight(): void {
+        $stored = json_value::normalise('{"<k>":"<v> \"q\"","n":-1.5e3,"t":true,"z":null,"a":[]}');
+        $html = json_value::highlight($stored);
+
+        $this->assertStringContainsString('<span class="profilefield-json-key">&quot;&lt;k&gt;&quot;</span>', $html);
+        $this->assertStringContainsString('<span class="profilefield-json-string">&quot;&lt;v&gt;', $html);
+        $this->assertStringContainsString('<span class="profilefield-json-number">-1500.0</span>', $html);
+        $this->assertStringContainsString('<span class="profilefield-json-boolean">true</span>', $html);
+        $this->assertStringContainsString('<span class="profilefield-json-null">null</span>', $html);
+        $this->assertStringContainsString('<span class="profilefield-json-punct">[</span>', $html);
+        // Only the spans added by highlight() are tags.
+        $this->assertSame(0, preg_match('/<(?!\/?span)/', $html));
+        // The text is the readable JSON, nothing lost.
+        $this->assertSame(json_value::readable($stored), html_entity_decode(strip_tags($html), ENT_QUOTES));
+    }
+
+    /**
      * max_kb() falls back to the default and caps the limit.
      */
     public function test_max_kb(): void {

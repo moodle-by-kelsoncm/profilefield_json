@@ -17,9 +17,10 @@
 {{!
     @template profilefield_json/display
 
-    JSON document of a user profile field, shown escaped and pretty-printed.
+    JSON document of a user profile field, pretty-printed with syntax highlighting.
+    The html value comes from json_value::highlight(), which escapes every token.
 
     Example context (json):
-    {"json": "{\n    \"name\": \"Ada\",\n    \"skills\": [\"math\", \"code\"]\n}"}
+    {"html": "<span class=\"profilefield-json-punct\">{</span> <span class=\"profilefield-json-key\">&quot;name&quot;</span><span class=\"profilefield-json-punct\">:</span> <span class=\"profilefield-json-string\">&quot;Ada&quot;</span> <span class=\"profilefield-json-punct\">}</span>"}
 }}
-<pre class="profilefield-json-display">{{json}}</pre>
+<pre class="profilefield-json-display">{{{html}}}</pre>
