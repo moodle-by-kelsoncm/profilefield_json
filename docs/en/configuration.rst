@@ -29,7 +29,7 @@ Every value is checked on the server before it is saved:
 * it must be valid JSON (objects, arrays, strings, numbers, booleans or ``null``), with at most 64 levels of nesting;
 * it must fit in the maximum size of the field.
 
-Accepted values are re-encoded: pretty-printed with four spaces, Unicode kept as text, and ``<``, ``>`` and ``&`` escaped inside strings (``<``, ``>``, ``&``). An empty value means "no data".
+Accepted values are re-encoded: pretty-printed with four spaces, Unicode kept as text, and ``<``, ``>`` and ``&`` escaped inside strings (``\u003C``, ``\u003E``, ``\u0026``). An empty value means "no data".
 
 Privacy
 -------

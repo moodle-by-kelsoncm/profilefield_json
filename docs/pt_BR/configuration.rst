@@ -29,7 +29,7 @@ Todo valor é conferido no servidor antes de ser gravado:
 * precisa ser JSON válido (objetos, listas, strings, números, booleanos ou ``null``), com no máximo 64 níveis de aninhamento;
 * precisa caber no tamanho máximo do campo.
 
-Os valores aceitos são recodificados: formatados com quatro espaços, Unicode mantido como texto, e ``<``, ``>`` e ``&`` escapados dentro das strings (``<``, ``>``, ``&``). Valor vazio significa "sem dado".
+Os valores aceitos são recodificados: formatados com quatro espaços, Unicode mantido como texto, e ``<``, ``>`` e ``&`` escapados dentro das strings (``\u003C``, ``\u003E``, ``\u0026``). Valor vazio significa "sem dado".
 
 Privacidade
 -----------
