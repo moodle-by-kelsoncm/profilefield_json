@@ -1,19 +1,34 @@
 Installation
 ============
 
-Step by Step
+Requirements
 ------------
 
-1. Navigate to your Moodle installation's user profile field directory:
+* Moodle 4.5 LTS or 5.3 LTS.
+* PHP supported by your Moodle version.
 
-   .. code-block:: bash
+From a ZIP file
+---------------
 
-      cd /path/to/moodle/user/profile/field
+1. Download ``profilefield_json-<version>.zip`` from the `releases <https://github.com/moodle-by-kelsoncm/profilefield_json/releases>`_.
+2. Go to *Site administration > Plugins > Install plugins*, upload the ZIP and follow the steps.
+3. Finish the upgrade at *Site administration > Notifications*.
 
-2. Clone the repository naming the folder `json`:
+From the source code
+--------------------
 
-   .. code-block:: bash
+Copy the repository to ``user/profile/field/json`` (``public/user/profile/field/json`` on Moodle 5.1 and later) and visit *Site administration > Notifications*:
 
-      git clone https://github.com/moodle-by-kelsoncm/profilefield_json.git json
+.. code-block:: bash
 
-3. Access **Site administration > Notifications** to complete the database upgrade.
+   git clone https://github.com/moodle-by-kelsoncm/profilefield_json.git public/user/profile/field/json
+
+Languages
+---------
+
+The package ships the English strings only. Other languages, including Brazilian Portuguese, come from the Moodle translation tool (AMOS) through the language packs.
+
+Third-party code
+----------------
+
+The visual editor is `JSON Editor <https://github.com/josdejong/jsoneditor>`_ 10.4.3 by Jos de Jong (Apache License 2.0), in its full build (about 1 MB, loaded only on the profile edit page), which includes the Ace code editor. It is listed in ``thirdpartylibs.xml``.

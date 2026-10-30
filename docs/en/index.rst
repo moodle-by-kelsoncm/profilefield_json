@@ -1,22 +1,40 @@
-Overview - moodle-profilefield_json
-===================================
+moodle-profilefield_json
+========================
 
-**moodle-profilefield_json** is a Moodle user profile custom field plugin that allows storing, viewing, and editing data in **JSON** format with an interactive GUI based on JSONEditor and **JSON Schema** validation.
+**A user profile field that stores a JSON document, edited with a visual tree editor and always valid.**
 
-Key Features
-------------
+.. figure:: img/edit.png
+   :alt: Editing a user's profile: the JSON field shows a tree editor with objects, arrays and values.
+   :width: 100%
 
-- **Interactive Viewing & Editing**: Tree editor or code view with syntax highlighting.
-- **JSON Schema Validation**: Validates data structure prior to saving to ensure schema compliance.
-- **Open Standard**: Storage format fully compatible with REST and GraphQL integrations.
+   Editing a profile: the JSON field opens a tree editor.
 
-Documentation
--------------
+* **Structured data in the profile.** Keep integration identifiers, preferences or any nested data in one field instead of many text fields.
+* **Visual editor.** Tree, code (with syntax highlighting), form and view modes from `JSON Editor <https://github.com/josdejong/jsoneditor>`_, with the plain textarea as a fallback.
+* **Always valid.** The server only saves valid JSON within the size limit set for the field, and stores it in a canonical, pretty-printed form.
+* **Safe to display.** The document is shown with syntax highlighting in a code block, always escaped: HTML inside strings is never rendered.
+
+Versão em português: `Português (Brasil) <../pt-br/index.html>`_.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents
 
    installation
    configuration
    usage
+
+Main features
+-------------
+
+* New profile field type **JSON**, created at *Site administration > Users > Accounts > User profile fields*.
+* Maximum size per field (64 KB by default, up to 1024 KB) and a validated default value.
+* Validation on the profile and signup forms, with the parser error shown to the user; invalid values from the user upload or web services are ignored.
+* Canonical storage: pretty-printed, with ``<``, ``>`` and ``&`` escaped inside strings.
+* Privacy API: the documents are exported and deleted with the user's data.
+* **Moodle 4.5 LTS and 5.3 LTS**: tested on a CI matrix with PostgreSQL and MariaDB.
+
+Links
+-----
+
+* Source code and issues: https://github.com/moodle-by-kelsoncm/profilefield_json

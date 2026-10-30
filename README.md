@@ -1,44 +1,33 @@
-# JSON Moodle Profile Field plugin
+# moodle-profilefield_json
 
-JSON custom field to user profiles into Moodle.
+[English](#english) · [Português (Brasil)](#português-brasil)
 
-JSON is a standard widely adopted by the information and communication technology industry. Saving information about users in this format can help with integration processes, however, despite being saved as plain text, preferably in UTF-8, reading or editing using a standard plain text editor is very poor. Hence the need for a field type that supports richer viewing/editing.
+Documentation / Documentação: <https://moodle-by-kelsoncm.github.io/profilefield_json/>
 
-## Objectives
+## English
 
-1. View using [JSON Viewer](https://github.com/josdejong/jsoneditor)
-2. Edit using [JSON Editor](https://github.com/josdejong/jsoneditor)
-3. Validate using [JSON Schema](https://json-schema.org/implementations.html) specified
+User profile field that stores a JSON document. Users edit it in a visual tree editor ([JSON Editor](https://github.com/josdejong/jsoneditor)), the server only saves valid JSON within the size set for the field, and the profile shows it escaped and pretty-printed. Supports Moodle 4.5 LTS and 5.3 LTS.
 
+Install: copy this repository to `user/profile/field/json` (`public/user/profile/field/json` on Moodle 5.1+) and visit *Site administration > Notifications*. Then create a field of type **JSON** at *Site administration > Users > Accounts > User profile fields*.
 
-## Authors
+## Português (Brasil)
 
-*-* Kelson da Costa Medeiros - https://linkedin.com/in/kelsoncm https://github.com/kelsoncm
+Campo de perfil de usuário que guarda um documento JSON. O usuário edita num editor visual em árvore ([JSON Editor](https://github.com/josdejong/jsoneditor)), o servidor só grava JSON válido dentro do tamanho definido para o campo, e o perfil mostra o documento escapado e formatado. Suporta Moodle 4.5 LTS e 5.3 LTS.
 
-## License
+Instalação: copie este repositório para `user/profile/field/json` (`public/user/profile/field/json` no Moodle 5.1+) e acesse *Administração do site > Notificações*. Depois crie um campo do tipo **JSON** em *Administração do site > Usuários > Contas > Campos de perfil do usuário*.
 
-The MIT License (MIT)
+## Development / Desenvolvimento
 
-Copyright (c) 2023 Kelson da Costa Medeiros
+- JavaScript sources are in `amd/src`; rebuild `amd/build` with `npx grunt amd --root=public/user/profile/field/json` in a Moodle checkout.
+- `thirdparty/jsoneditor` is the third-party JSON Editor 10.4.3 (full build with the Ace code editor, Apache-2.0), listed in `thirdpartylibs.xml` and loaded by `amd/src/editor.js` through RequireJS.
+- CI (`.github/workflows/ci.yml`) runs `moodle-plugin-ci` on Moodle 4.5 and 5.3 with PostgreSQL and MariaDB; run it locally with [`act`](https://github.com/nektos/act) before pushing.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Support and privacy / Suporte e privacidade
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+- Issue tracker / Rastreador de issues: <https://github.com/moodle-by-kelsoncm/profilefield_json/issues>
+- Privacy / Privacidade: the documents are personal data; they are exported and deleted with the user's data (Privacy API) / os documentos são dados pessoais; são exportados e apagados com os dados do usuário.
+- Translations / Traduções: only English is shipped; other languages go through AMOS / o pacote traz só inglês; outros idiomas via AMOS.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## License / Licença
 
-https://opensource.org/license/mit/
-
-> Copyright 2023 onwards Kelson da Costa Medeiros (https://linkedin.com/in/kelsoncm)
+GNU GPL v3 or later. See [LICENSE](LICENSE). Earlier versions (up to 1.0.001) were published under the MIT License.
