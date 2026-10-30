@@ -1,9 +1,9 @@
 import moodle_docs_theme
 
 project = "moodle-profilefield_json"
-copyright = "2023, Kelson da Costa Medeiros"
+copyright = "2023 onwards, Kelson da Costa Medeiros"
 author = "Kelson da Costa Medeiros"
-release = "1.0.001"
+release = "1.1.0"
 
 extensions = [
     "sphinx.ext.githubpages",
@@ -20,7 +20,7 @@ html_theme_path = [moodle_docs_theme.get_html_theme_path()]
 
 html_theme_options = {
     "project_name": "moodle-profilefield_json",
-    "tagline": "User profile custom field with JSON editor and schema validation",
+    "tagline": "User profile field that stores a JSON document, with a visual editor",
     "github_url": "https://github.com/moodle-by-kelsoncm/profilefield_json",
     "github_repo": "moodle-by-kelsoncm/profilefield_json",
     "github_version": "main",

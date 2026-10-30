@@ -1,0 +1,53 @@
+/*
+ * This file is part of Moodle - https://moodle.org/
+ *
+ * Moodle is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Moodle is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/*
+ * Styles of the JSON user profile field. The editor's own stylesheet is in thirdparty/jsoneditor.
+ *
+ * @package    profilefield_json
+ * @copyright  2023 onwards Kelson da Costa Medeiros
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/* The form template replaces the class attribute of textareas, so a data attribute marks them. */
+textarea[data-profilefield-json-source] {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Hidden once the visual editor is ready; more specific than .form-control. */
+textarea[data-profilefield-json-source][aria-hidden="true"] {
+    display: none;
+}
+
+/* The form element is a flex row: take the whole line, up to a readable width. */
+.profilefield-json-editor {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 48rem;
+    height: 22rem;
+}
+
+.profilefield-json-display {
+    max-height: 24rem;
+    margin: 0;
+    padding: 0.5rem;
+    overflow: auto;
+    white-space: pre-wrap;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
